@@ -2,7 +2,7 @@ const contactsDB = require("../model/contacts");
 
 exports.post_create = (req, res, next) => {
   console.log(req.body);
-
+// creat a insert object 
   var contacts = new contactsDB({
     _id: mongoose.Types.ObjectId(),
     name: req.body.name,
@@ -10,6 +10,7 @@ exports.post_create = (req, res, next) => {
     number: req.body.number,
   });
 
+// saving object using promise 
   contacts
     .save()
     .then((result) => {

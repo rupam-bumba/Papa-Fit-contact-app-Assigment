@@ -1,6 +1,7 @@
 const contactsDB = require("../model/contacts");
 
 exports.delete_remove = (req, res, next) => {
+    //delete by id
   contactsDB
     .deleteOne({ _id : req.body._id })
     .then((result) => {

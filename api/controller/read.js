@@ -3,7 +3,7 @@ const contactsDB = require("../model/contacts");
 exports.get_read = (req, res, next) => {
   //   console.log(typeof req.query.qu);
   var param = {};
-
+// checking if it a number or not 
   if (isNaN(parseInt(req.query.qu))) {
     param = {
       $or: [
@@ -15,7 +15,7 @@ exports.get_read = (req, res, next) => {
     param = { number: parseInt(req.query.qu) };
   }
   console.log(param);
-
+// scarching 
   contactsDB
     .find(param)
     .then((result) => {

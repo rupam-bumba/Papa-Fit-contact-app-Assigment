@@ -1,6 +1,7 @@
 const contactsDB = require("../model/contacts");
 
 exports.put_update = (req, res, next) => {
+    // find by id and update 
   contactsDB
     .findOneAndUpdate(
       { _id: req.body._id },
